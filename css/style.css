@@ -140,6 +140,7 @@ font-family: 'Times New Roman', Times, serif;
 }
 .beatles{
     box-shadow: ;
+
 }
 .bat{
     text-align: center;
@@ -177,4 +178,14 @@ font-family: 'Times New Roman', Times, serif;
 .texto{
     color: rgb(0, 0, 0);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.video{
+    display: flex;
+    justify-content: center;
+}
+.lebron{
+    width: 800px;
+    height: 500px;
+    border: 9px solid rgb(0, 0, 0);
+
 }
