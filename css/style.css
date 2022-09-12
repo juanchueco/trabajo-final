@@ -55,7 +55,6 @@ justify-content: center;
     justify-content: space-evenly;
     width: 100%;
     padding: 10px 0px;
-    backround
 }
 .texto{
     text-align: center;
@@ -114,7 +113,6 @@ justify-content: center;
 }
 .abbey{
     width: 850px;
-    height: ;
 }
 .canciones{
     color: rgba(255, 255, 255, 0.459);
@@ -130,9 +128,9 @@ font-family: 'Times New Roman', Times, serif;
 
 }
 .primeraLinea1{
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 100%; */
 
 }
 .home{
