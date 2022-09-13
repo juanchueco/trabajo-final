@@ -8,16 +8,11 @@
     border-bottom: 2px solid black;
     background-color: mediumvioletred;
 }
-.hijoHeader{
-    width: 30%;
+.bloqueLogo{
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-.navPadre{
-    display: flex;
-    flex-direction: row;
-    margin: 0px 10px;
+    justify-content: space-between;
+    align-items: center;
+    height: 20vh;
 }
 .logo{
     width: 100px;
@@ -25,13 +20,28 @@
     justify-content: space-around;
     border-radius: 100px;
 }
+.header{
+    text-align: right;
+
+}
+.hijoHeader{
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
 
 a {
     text-decoration: none;
 }
-.header{
-    text-align: right;
 
+.bloqueNav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+.home{
+    padding: 0px 10px;
 }
 .genero{
     text-align: center;
@@ -47,16 +57,6 @@ a {
     flex-direction: column;
     flex-wrap: nowrap;
 }
-/* .pollo{
-width: 100%;
-height: 440px;
-display: flex;
-justify-content: center;
-
-} */
-/* .empanada{
-    width: 100%;
-} */
 .primeraLinea{
     display: flex;
     justify-content: space-evenly;
@@ -86,16 +86,10 @@ justify-content: center;
     text-align: center;
     color: rgb(232, 42, 42);
     font-size: 30px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Courier New', Courier, monospace;
     border: 3px solid rgb(0, 0, 0);
 }
-.bloqueNav {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
-  
-  .bloqueNavHijo {
+.bloqueNavHijo {
     background-color: #444;
     color: white;
     height: 50px;
@@ -113,83 +107,18 @@ justify-content: center;
     border-top-left-radius: 29px;
     color: black;
 }
-.papi{
-    display: flex;
-    align-content: center;
-    align-items: center;
-    flex-direction: column;
-    flex-wrap: nowrap;
-}
-.abbey{
-    width: 850px;
-}
-.canciones{
-    color: rgba(255, 255, 255, 0.459);
-    font-style: italic;
-}
-.cancion{
-    color: rgba(255, 255, 255, 0.459);
-    font-family: 'Times New Roman', Times, serif;
-}
-.cancionesB{
-font-family: 'Times New Roman', Times, serif;
-
-
-}
-.primeraLinea1{
-    /* display: flex;
-    justify-content: space-between;
-    width: 100%; */
-
-}
-.home{
-    padding: 0px 10px;
-}
-.beatles{
-    box-shadow: ;
-
-}
-.bat{
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 70px;
-}
-.letBe{
-    display: flex;
-    width:777px;
-}
-.bloqueLogo{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 20vh;
-}
-.rock{
-    display: flex;
-    width: 666px;
-    justify-content: center;
-    height: 500px;
-}
-.rocky{
-    text-align: center;
-    border: 3px solid #333;
-}
-
 .texto{
     color: rgb(0, 0, 0);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT','Trebuchet MS', sans-serif;
 }
 .video{
     display: flex;
     justify-content: center;
 }
-.lebron{
-    width: 800px;
-    height: 500px;
-    border: 9px solid rgb(0, 0, 0);
+
+.titulopelis{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+    text-align: center;
 
 }
-
-/* .imagenes{
-        height: 100px;
-    } */
