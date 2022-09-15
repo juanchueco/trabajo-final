@@ -110,6 +110,8 @@ a {
 .texto{
     color: rgb(0, 0, 0);
     font-family: 'Gill Sans', 'Gill Sans MT','Trebuchet MS', sans-serif;
+    font-size: 15px;
+    text-align: center;
 }
 .video{
     display: flex;
@@ -121,4 +123,31 @@ a {
     font-size: 20px;
     text-align: center;
 
+}
+
+.titulodetalle{
+    text-align: center;
+}
+
+.parrafosdetalles{
+    text-align: center;
+    font-size: 18px;
+}
+
+.estreno{
+    text-decoration-color: currentcolor;
+    font-family: 'Gill Sans', 'Gill Sans MT','Trebuchet MS', sans-serif;
+    font-size: 15px;
+    text-align: center;
+}
+
+.imagendetalle{
+    display:flex;
+    justify-content: center;
+}
+
+.trailer{
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
