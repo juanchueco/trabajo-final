@@ -111,7 +111,9 @@ a {
 }
 .texto{
     color: rgb(0, 0, 0);
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT','Trebuchet MS', sans-serif;
+    font-size: 15px;
+    text-align: center;
 }
 .video{
     display: flex;
@@ -122,4 +124,35 @@ a {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 20px;
     text-align: center;
+    color: blue;
+
+}
+
+.titulodetalle{
+    text-align: center;
+}
+
+.parrafosdetalles{
+    text-align: center;
+    font-size: 18px;
+}
+
+.estreno{
+    text-decoration-color: currentcolor;
+    font-family: 'Gill Sans', 'Gill Sans MT','Trebuchet MS', sans-serif;
+    font-size: 15px;
+    text-align: center;
+}
+
+.imagendetalle{
+   margin: 10px;
+   width: 450px;
+   height: 550px;
+   box-sizing: border-box;
+}
+
+.trailer{
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
