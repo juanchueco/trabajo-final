@@ -58,15 +58,16 @@ a {
 }
 .mainPadre{
     display: flex;
-    align-content: center;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 }
 .primeraLinea{
     display: flex;
     justify-content: space-evenly;
-    width: 100%;
+    flex-wrap: wrap;
+ 
     padding: 10px 0px;
 }
 
@@ -208,14 +209,48 @@ a {
 
 }
 
+.boton{
+width: 15%;
+display: flex;
+align-items: center;
+margin: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width:420px) {
     .bloqueNav{
         display: none;
     }
     .menuEscondido{
         display: block;
+        width: 20px;
+        height: 20px;
+       
+       
     }
+    .myArticles{
+        width: auto;
+    }
+    iframe{
+
+        width: 150px;
+        height: 280px;
+    }
+
+
+    
    
     
 }
-
