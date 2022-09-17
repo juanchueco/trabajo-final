@@ -231,8 +231,14 @@ margin: 15px;
 
 @media (max-width:420px) {
     .bloqueNav{
-        display: none;
+        /* display: none; */
+        flex-wrap: wrap;
+        Justify-content: center
     }
+
+    .header{
+        Height: auto
+        }
     .menuEscondido{
         display: block;
         width: 20px;
