@@ -67,7 +67,6 @@ a {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
- 
     padding: 10px 0px;
 }
 
@@ -142,8 +141,7 @@ a {
     font-size: 18px;
 }
 
-.estreno{
-    text-decoration-color: currentcolor;
+.estreno{ 
     font-family: 'Gill Sans', 'Gill Sans MT','Trebuchet MS', sans-serif;
     font-size: 15px;
     text-align: center;
@@ -255,7 +253,28 @@ margin: 15px;
         height: 280px;
     }
 
+    iframe{
 
+        width: 100%;
+        height: auto;
+    }
+
+    .section2{
+        display: block;
+    }
+
+    .article2{
+        width: 100%;
+        margin: auto;
+    }
+
+    .article3{
+        width: 100%;
+    }
+
+    .boton{
+        width: 25%;
+    }
     
    
     
