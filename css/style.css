@@ -26,10 +26,6 @@
     justify-content: space-around;
     border-radius: 100px;
 }
-.header{
-    text-align: right;
-
-}
 .hijoHeader{
     width: 30%;
     display: flex;
