@@ -2,7 +2,7 @@
 .myBody{
     background-color:rgb(40, 37, 40);
     margin: 0;
-    background-image: url(../img/header\ facha.webp);
+    background-image: url(../img/header/facha)
 }
 .header{
     height: 30vh;

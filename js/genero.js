@@ -5,14 +5,28 @@ fetch(generos)
 })
     .then(function(data) {
         console.log(data);
-        let geneross= document.querySelectorAll(".titulopelis")
-        let generovacio=""
-        for (let i=0; i<=3; i++){
-            generovacio+=data.genres[i].name + ", "
-            console.log(generovacio)
+        console.log(data.genres[0].name)
+        let geneross= document.querySelector(".titulopelis")
+        let generos1= document.querySelector(".titulopelis1")
+        let generos2= document.querySelector(".titulopelis2")
+        let generos3= document.querySelector(".titulopelis3")
+        let generos4= document.querySelector(".titulopelis4")
+        // let generovacio=""
+        // for (let i=0; i<=3; i++){
+        //     generovacio+=data.genres[i].name + ", "
+        //     console.log(generovacio)
 
-        }
-        geneross.innerHTML=generovacio
+
+
+        // }
+        geneross.innerText+= data.genres[0].name
+        generos1.innerText+=data.genres[1].name
+        generos2.innerText+=data.genres[2].name
+        generos3.innerText+=data.genres[3].name
+        generos4.innerText+=data.genres[4].name
+
+
+
 
         
 })
