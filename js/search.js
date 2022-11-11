@@ -16,17 +16,17 @@ fetch(url)
 
 let section=document.querySelector(".primeraLinea");
 
-for (let i=0; i<data.results.length; i++){
+for (let i=0; i<6; i++){
    section.innerHTML += `<article class="myArticles">
    <a href="./detalle-peliculas.html">
        <div>
            <h1 class="titulopelis">${data.results[i].title}</h1>
            <img class="imagenes"
-               src="${data.results[i].title}"
+              src="https://image.tmdb.org/t/p/w500${data.results[i].poster_path}"
                alt="foto1">
            <p class="texto">
            </p>
-           <p class="estreno"> </p>
+           <p class="estreno"> ${data.results[i].overview} </p>
        </div>
    </a>
 </article>`
