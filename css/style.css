@@ -11,6 +11,10 @@
     background-image: url(../img/header\ facha.webp);
 }
 
+.mensaje{
+    background-color: red;
+}
+
 .menuEscondido{
     display: none;
 }
