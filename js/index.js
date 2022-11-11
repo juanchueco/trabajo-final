@@ -121,4 +121,4 @@ let url = "https://api.themoviedb.org/3/movie/popular?api_key=6b8e258b66583b977b
 
         .catch(function(error) {
           console.log("Error: " + error);
-        })
+        }) 
