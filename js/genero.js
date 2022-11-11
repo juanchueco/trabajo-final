@@ -1,16 +1,23 @@
   // buscador con sus condiciones
   let buscador= document.querySelector(".buscador")
   let rtabuscador=document.querySelector(".rta")
+  let mensaje=document.querySelector(".mensaje")
   buscador.addEventListener('submit', function(hola){
     hola.preventDefault()
     
     if (rtabuscador.value == '') {
-        alert('No buscó nada.')
+      mensaje.innerHTML = "No escribio nada"
+      
     }
     else if (rtabuscador.value.length <= 3){
         alert('Introduzca como minimo 3 caracteres')
     }
+
+    else{
+      this.submit()
+    }
   })
+
 
 // Generos
 let generos="https://api.themoviedb.org/3/genre/movie/list?api_key=6b8e258b66583b977b648fcc8df4f960&language=en-US"
