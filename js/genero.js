@@ -10,11 +10,12 @@
       
     }
     else if (rtabuscador.value.length <= 3){
-        alert('Introduzca como minimo 3 caracteres')
+      mensaje.innerHTML=" introduzca como minimo 3 caracteres"
     }
 
     else{
       this.submit()
+      mensaje.innerHTML=""
     }
   })
 
