@@ -113,8 +113,17 @@ a {
     border-top-left-radius: 29px;
     color: black;
 }
+.footer article {
+    height: 50px;
+    width: 50px;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    margin-left: 10px;
+    border-radius: 50%;
+}
 .foot{
-    
+    width: 58%;
 }
 .texto{
     color: rgb(0, 0, 0);
