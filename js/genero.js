@@ -1,4 +1,4 @@
-  // buscador con sus condiciones
+  // // buscador con sus condiciones
   let buscador= document.querySelector(".buscador")
   let rtabuscador=document.querySelector(".rta")
   let mensaje=document.querySelector(".mensaje")
@@ -41,12 +41,6 @@ fetch(generos)
              console.log(generovacio)
          }
          generos.innerHTML = generovacio
-        // geneross.innerText+=generovacio[0]
-        // geneross.innerText+= data.genres[0].name
-        // generos1.innerText+=data.genres[1].name
-        // generos2.innerText+=data.genres[2].name
-        // generos3.innerText+=data.genres[3].name
-        // generos4.innerText+=data.genres[4].name
 
 })
     .catch(function(error) {
