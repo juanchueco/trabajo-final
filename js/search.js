@@ -1,33 +1,28 @@
-// si esto lo comento, me funciona lo del buscador. Preguntar xq
-
-
-// let rtabuscador=document.querySelector(".rta")
-// let mensaje=document.querySelector(".mensaje")
-// buscador.addEventListener('submit', function(hola){
-//   hola.preventDefault()
+// Buscador con condiciones
+let buscador= document.querySelector(".buscador")
+let rtabuscador=document.querySelector(".rta")
+let mensaje=document.querySelector(".mensaje")
+buscador.addEventListener('submit', function(hola){
+  hola.preventDefault()
   
-//   if (rtabuscador.value == '') {
-//     mensaje.innerHTML = "No escribio nada"
+  if (rtabuscador.value == '') {
+    mensaje.innerHTML = "No escribio nada"
     
-//   }
-//   else if (rtabuscador.value.length <= 3){
-//     mensaje.innerHTML=" introduzca como minimo 3 caracteres"
-//   }
+  }
+  else if (rtabuscador.value.length <= 3){
+    mensaje.innerHTML=" introduzca como minimo 3 caracteres"
+  }
 
-//   else{
-//     this.submit()
-//     mensaje.innerHTML=""
-//   }
-// })
-
-
-
+  else{
+    this.submit()
+    mensaje.innerHTML=""
+  }
+})
 
 let querystring=location.search
 let queryStringObj = new URLSearchParams(querystring);
 let busqueda = queryStringObj.get('busqueda');	
 console.log(busqueda);
-
 let url=`https:api.themoviedb.org/3/search/movie?query=${busqueda}&api_key=6b8e258b66583b977b648fcc8df4f960&language=en-US&page=1&include_adult=false`
 fetch(url)
 .then(function(response) {
@@ -39,7 +34,7 @@ fetch(url)
 
 let section=document.querySelector(".primeraLinea");
 
-// if(data.data.length==0){
+// if(data.genres.length==0){
 //   rtabuscador.innerText = `No se a encontrado resultado de busqueda para: ${busqueda}`
 // }
 // else{
