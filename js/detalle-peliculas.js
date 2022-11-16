@@ -19,41 +19,85 @@
     }
   })
 
-  // let queryString = location.search;
-  // let queryStringObj = new URLSearchParams(queryString);
-  // let id = queryStringObj.get('id');
-  // console.log(id);
+   let queryString = location.search;
+   let queryStringObj = new URLSearchParams(queryString);
+  let id = queryStringObj.get('id');
+   console.log(id);
   
-  // let url = `https://api.themoviedb.org/3/movie/popular?api_key=6b8e258b66583b977b648fcc8df4f960&language=en-US&page=1${id}`
+  let url = `https://api.themoviedb.org/3/movie/${id}?api_key=6b8e258b66583b977b648fcc8df4f960&language=en-US
+
+`
   
-  // fetch(url)
-  //  .then(function(res){
-  //     return res.json();
-  //  })
-  //  .then(function(data){
-  //     console.log(data);
+   fetch(url)
+    .then(function(res){
+       return res.json();
+    })
+    .then(function(data){
+       console.log(data);
   
-  //     let poster = document.querySelector('#poster');
-  //     let titulo = document.querySelector('#titulo');
-  //     let descripcion = document.querySelector('#descripcion');
-  //     let rating = document.querySelector('#rating');
-  //     let estreno = document.querySelector('#estreno');
-  //     let directores = document.querySelector('#directoresNombre');
-  //     let elenco = document.querySelector('#elenco');
-  //     let genero = document.querySelector('#generoNombre');
+       let poster = document.querySelector('#poster');
+      let titulo = document.querySelector('#titulo');
+       let descripcion = document.querySelector('#descripcion');
+       let rating = document.querySelector('#rating');
+       let estreno = document.querySelector('#estreno');
+       let director = document.querySelector('#directoresNombre');
+       let elenco = document.querySelector('#elenco');
+       let genero = document.querySelector('#generoNombre');
   
-  //     img.src=data.poster_path;
-  //     titulo.innerText = data.poster_path;
-  //     descripcion.innerText = data.overview;
-  //     rating.innerText += data.vote_average;
-  //     estreno.innerText += data.release_date;
-  //     director.innerText += data.species;
-  //     elenco.innerText += data.species;
-  //     genero.innerText += data.species;
+
+       poster.src=`https://image.tmdb.org/t/p/w500${data.poster_path}`
+       titulo.innerText = data.original_title;
+       descripcion.innerText = data.overview;
+       rating.innerText += data.vote_average;
+       estreno.innerText += data.release_date;
+       director.innerText += data.runtime;
+       elenco.innerText += data.budget;
+       genero.innerText += data.genres;
   
       
   
-  //  })
-  //  .catch(function(e){
-  //     console.log(e);
-  //  })
+    })
+    .catch(function(e){
+      console.log(e);
+    })
+
+
+let url22 = "https://api.themoviedb.org/3/movie/popular?api_key=6b8e258b66583b977b648fcc8df4f960&language=en-US&page=1"
+
+fetch(url22)
+.then(function(response) {
+  return response.json()
+})
+
+.then(function(data) {
+    console.log(data);
+    let pelisApi = data.results
+    let peliculas = document.querySelector('#bloquePeliculas') 
+    let peliculasVacio = ''
+    
+    for (let i = 0; i < 5; i++) {
+        
+    peliculasVacio +=
+         `<article class="myArticles">
+        <a href="detalle-peliculas.html?id=${pelisApi[i].id}">
+        <div class="bloque-item-lista">
+            <h1 id="tituloPeliculas" class="titulopelis">${pelisApi[i].title}</h1>
+            <img id="imagenPelicula" class="imagenes" src="https://image.tmdb.org/t/p/w500${pelisApi[i].poster_path}" alt="foto1">
+            <p id="textoPelicula" class="texto"> ${pelisApi[i].overview}</p>
+
+            <p class="estreno">${pelisApi[i].release_date} </p>
+        </div>
+         </a>
+        </article>`
+        
+    }
+    console.log(peliculas);
+    console.log(peliculasVacio);
+    peliculas.innerHTML = peliculasVacio
+
+})
+
+
+.catch(function(error) {
+  console.log("Error: " + error);
+})
