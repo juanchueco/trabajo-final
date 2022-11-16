@@ -2,6 +2,7 @@
 let buscador= document.querySelector(".buscador")
 let rtabuscador=document.querySelector(".rta")
 let mensaje=document.querySelector(".mensaje")
+let titulo=document.querySelector(".titulo")
 buscador.addEventListener('submit', function(hola){
   hola.preventDefault()
   
@@ -34,12 +35,12 @@ fetch(url)
 
 let section=document.querySelector(".primeraLinea");
 
-// if(data.genres.length==0){
-//   rtabuscador.innerText = `No se a encontrado resultado de busqueda para: ${busqueda}`
-// }
-// else{
-//   rtabuscador.innerText = `Resultado de busqueda para: ${busqueda}`
-// }
+if(data.results.length==0){
+  titulo.innerText = `No se a encontrado resultado de busqueda para: ${busqueda}`
+}
+else{
+  titulo.innerText = `Resultado de busqueda para: ${busqueda}`
+}
 
 for (let i=0; i<6; i++){
    section.innerHTML += `<article class="myArticles">
