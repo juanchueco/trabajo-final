@@ -50,8 +50,7 @@
        descripcion.innerText = data.overview;
        rating.innerText += data.vote_average;
        estreno.innerText += data.release_date;
-       director.innerText += data.runtime;
-       elenco.innerText += data.budget;
+       director.innerText += data.episode_run_time;
        genero.innerText += data.genres;
   
       

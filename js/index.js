@@ -79,7 +79,7 @@ let url = "https://api.themoviedb.org/3/movie/popular?api_key=6b8e258b66583b977b
 
             seriesVacio +=
                  `<article class="myArticles">
-                <a href="./detalle-serie.html/?id=1">
+                <a href="detalle-serie.html?id=${seriesApi[i].id}">
                 <div class="bloque-item-lista">
                     <h1 id="tituloPeliculas" class="titulopelis">${seriesApi[i].original_name
                     }</h1>

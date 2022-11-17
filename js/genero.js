@@ -32,7 +32,7 @@ fetch(generos)
         let generovacio=""
         for (let i=0; i<data.genres.length; i++){
              generovacio+=`<article class="myArticles">
-                            <a href="./detalle-genero.html">
+                            <a href="detalle-genero.html?id=${data.genres[i].id}">
                               <div class="bloque-item-lista">
                                 <h1 class="titulopelis">${ data.genres[i].name}</h1>
                               </div>
