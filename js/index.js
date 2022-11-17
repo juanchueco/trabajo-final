@@ -79,7 +79,7 @@ let url = "https://api.themoviedb.org/3/movie/popular?api_key=6b8e258b66583b977b
 
             seriesVacio +=
                  `<article class="myArticles">
-                <a href="./detalle-serie.html/?id=1">
+                <a href="detalle-serie.html?id=${seriesApi[i].id}">
                 <div class="bloque-item-lista">
                     <h1 id="tituloPeliculas" class="titulopelis">${seriesApi[i].original_name
                     }</h1>
@@ -145,3 +145,45 @@ let url = "https://api.themoviedb.org/3/movie/popular?api_key=6b8e258b66583b977b
         .catch(function(error) {
           console.log("Error: " + error);
         }) 
+
+        let url4 ="https://api.themoviedb.org/3/tv/popular?api_key=6b8e258b66583b977b648fcc8df4f960&language=en-US&page=1"
+
+        fetch(url4)
+        .then(function(response) {
+          return response.json()
+        })
+
+        .then(function(data) {
+            console.log(data);
+            let seriesApi = data.results
+            let series = document.querySelector('#bloqueSeries2') 
+            let seriesVacio = ''
+
+        for (let i = 6; i < 11; i++) {
+
+            seriesVacio +=
+                 `<article class="myArticles">
+                <a href="./detalle-serie.html/?id=1">
+                <div class="bloque-item-lista">
+                    <h1 id="tituloPeliculas" class="titulopelis">${seriesApi[i].original_name
+                    }</h1>
+                    <img id="imagenPelicula" class="imagenes" src="https://image.tmdb.org/t/p/w500${seriesApi[i].poster_path}" alt="foto1">
+                    <p id="textoPelicula" class="texto"> ${seriesApi[i].overview}</p>
+
+                    <p class="estreno">${seriesApi[i].first_air_date} </p>
+                </div>
+                 </a>
+                </article>`
+                
+            }
+            console.log(series);
+            console.log(seriesVacio);
+            series.innerHTML = seriesVacio
+        
+        })
+       
+
+        .catch(function(error) {
+          console.log("Error: " + error);
+        })
+       
