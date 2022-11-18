@@ -18,16 +18,16 @@ buscador.addEventListener('submit', function (hola) {
     mensaje.innerHTML = ""
   }
 })
+
 let queryString = location.search;
 let queryStringObj = new URLSearchParams(queryString);
 let id = queryStringObj.get('id');
 console.log(id);
 
 
-
-
-let url = `https://api.themoviedb.org/3/discover/movie?api_key=6b8e258b66583b977b648fcc8df4f960&language=en-US&sort_by=original_title.asc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate
+let url = `https://api.themoviedb.org/3/discover/movie?api_key=6b8e258b66583b977b648fcc8df4f960&language=en-US&sort_by=original_title.asc&include_adult=false&include_video=false&with_genres=${id}&with_watch_monetization_types=flatrate
 `
+
 fetch(url)
         .then(function(response) {
           return response.json()
@@ -35,29 +35,29 @@ fetch(url)
 
         .then(function(data) {
             console.log(data);
-            let pelisApi = data.results
-            let peliculas = document.querySelector('#bloquePeliculas') 
-            let peliculasVacio = ''
+            let generoApi = data.results
+            let generos = document.querySelector('#bloquePeliculas') 
+            let generosVacio = ''
             
             for (let i = 0; i < 5; i++) {
                 
             peliculasVacio +=
                  `<article class="myArticles">
-                <a href="detalle-peliculas.html?id=${pelisApi[i].id}">
+                <a href="detalle-genero.html?id=${generoApi[i].id}">
                 <div class="bloque-item-lista">
-                    <h1 id="tituloPeliculas" class="titulopelis">${pelisApi[i].title}</h1>
-                    <img id="imagenPelicula" class="imagenes" src="https://image.tmdb.org/t/p/w500${pelisApi[i].poster_path}" alt="foto1">
-                    <p id="textoPelicula" class="texto"> ${pelisApi[i].overview}</p>
+                    <h1 id="tituloGenero" class="titulopelis">${generoApi[i].original_title}</h1>
+                    <img id="imagenPelicula" class="imagenes" src="https://image.tmdb.org/t/p/w500${generoApi[i].poster_path}" alt="foto1">
+                    <p id="textoPelicula" class="texto"> ${generoApi[i].overview}</p>
 
-                    <p class="estreno">${pelisApi[i].release_date} </p>
+                    <p class="estreno">${generoApi[i].release_date} </p>
                 </div>
                  </a>
                 </article>`
                 
             }
-            console.log(peliculas);
-            console.log(peliculasVacio);
-            peliculas.innerHTML = peliculasVacio
+            console.log(genero);
+            console.log(generoVacio);
+            peliculas.innerHTML = generoVacio
         
         })
        
