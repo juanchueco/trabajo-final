@@ -43,6 +43,7 @@
        let director = document.querySelector('#directoresNombre');
        let elenco = document.querySelector('#elenco');
        let genero = document.querySelector('#generoNombre');
+
   
 
        poster.src=`https://image.tmdb.org/t/p/w500${data.poster_path}`
@@ -50,8 +51,9 @@
        descripcion.innerText = data.overview;
        rating.innerText += data.vote_average;
        estreno.innerText += data.release_date;
-       director.innerText += data.episode_run_time;
-       genero.innerText += data.genres;
+       director.innerText += data.runtime;
+       elenco.innerText += data.budget;
+       genero.innerText += data.genres[0].name;
   
       
   
