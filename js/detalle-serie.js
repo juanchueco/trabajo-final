@@ -55,7 +55,7 @@
 
       director.innerText += data.episode_run_time;
       
-      genero.innerText += data.genres;
+      genero.innerText += data.genres[0].name;
  
      
  
