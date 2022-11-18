@@ -3,14 +3,15 @@ let buscador= document.querySelector(".buscador")
 let rtabuscador=document.querySelector(".rta")
 let mensaje=document.querySelector(".mensaje")
 let titulo=document.querySelector(".titulo")
-buscador.addEventListener('submit', function(hola){
-  hola.preventDefault()
+buscador.addEventListener('submit', function(e){
+  e.preventDefault()
+  // no quiero que el evento de submit se envie de la nada
   
   if (rtabuscador.value == '') {
     mensaje.innerHTML = "No escribio nada"
     
   }
-  else if (rtabuscador.value.length <= 3){
+  else if (rtabuscador.value.length < 3){
     mensaje.innerHTML=" introduzca como minimo 3 caracteres"
   }
 
@@ -19,6 +20,7 @@ buscador.addEventListener('submit', function(hola){
     mensaje.innerHTML=""
   }
 })
+
 
 let querystring=location.search
 let queryStringObj = new URLSearchParams(querystring);
