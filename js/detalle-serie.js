@@ -54,8 +54,10 @@
       estreno.innerText += data.first_air_date;
 
       director.innerText += data.episode_run_time;
-      
-      genero.innerText += data.genres[0].name;
+      for (let i = 0; i < data.genres.length; i++) {
+        genero.innerText += data.genres[i].name;
+      }
+  
  
      
  

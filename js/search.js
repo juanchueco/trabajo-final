@@ -3,14 +3,15 @@ let buscador= document.querySelector(".buscador")
 let rtabuscador=document.querySelector(".rta")
 let mensaje=document.querySelector(".mensaje")
 let titulo=document.querySelector(".titulo")
-buscador.addEventListener('submit', function(hola){
-  hola.preventDefault()
+buscador.addEventListener('submit', function(e){
+  e.preventDefault()
+  // no quiero que el evento de submit se envie de la nada
   
   if (rtabuscador.value == '') {
     mensaje.innerHTML = "No escribio nada"
     
   }
-  else if (rtabuscador.value.length <= 3){
+  else if (rtabuscador.value.length < 3){
     mensaje.innerHTML=" introduzca como minimo 3 caracteres"
   }
 
@@ -19,6 +20,7 @@ buscador.addEventListener('submit', function(hola){
     mensaje.innerHTML=""
   }
 })
+
 
 let querystring=location.search
 let queryStringObj = new URLSearchParams(querystring);
@@ -64,3 +66,34 @@ for (let i=0; i<6; i++){
 })
 
 
+let url2=`https://api.themoviedb.org/3/search/tv?query=${busqueda}&api_key=6b8e258b66583b977b648fcc8df4f960&language=en-US&page=1&include_adult=false`
+fetch(url2)
+.then(function(response) {
+  return response.json()
+})
+.then(function(data) {
+
+  console.log(data);
+
+let section=document.querySelector(".primeraLinea");
+
+for (let i=0; i<6; i++){
+   section.innerHTML += `<article class="myArticles">
+   <a href="./detalle-peliculas.html">
+       <div>
+           <h1 class="titulopelis">${data.results[i].original_name}</h1>
+           <img class="imagenes"
+              src="https://image.tmdb.org/t/p/w500${data.results[i].poster_path}"
+               alt="foto1">
+           <p class="texto">
+           </p>
+           <p class="estreno"> ${data.results[i].overview} </p>
+       </div>
+   </a>
+</article>`
+}
+
+})
+.catch(function(error) {
+  console.log("Error: " + error);
+})

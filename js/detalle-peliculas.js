@@ -53,7 +53,13 @@
        estreno.innerText += data.release_date;
        director.innerText += data.runtime;
        elenco.innerText += data.budget;
-       genero.innerText += data.genres[0].name;
+       for (let i = 0; i < data.genres.length; i++) {
+        genero.innerText += data.genres[i].name;
+
+
+
+       }
+       
   
       
   
@@ -102,3 +108,40 @@ fetch(url22)
 .catch(function(error) {
   console.log("Error: " + error);
 })
+
+let url3 = `https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=6b8e258b66583b977b648fcc8df4f960`
+     fetch(url3)
+      .then(function(res){
+         return res.json();
+      })
+      .then(function(data){
+        let plataforma = document.querySelector('#plataformas');
+         console.log(data);
+         if(data.results == undefined){
+          plataforma.innerText+="No se encontro plataforma"
+
+
+         }
+         else if(data.results.AR == undefined){
+          plataforma.innerText+="No se encontro plataforma"
+
+
+         }
+        else{
+         let info = data.results.AR.flatrate
+         for (let i = 0; i < info.length; i++) {
+          plataforma.innerText+=info[i].provider_name
+
+          console.log(info);
+         
+
+        }}
+      
+
+    
+        
+    
+      })
+      .catch(function(e){
+        console.log(e);
+      })
