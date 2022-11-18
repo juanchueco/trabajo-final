@@ -46,7 +46,7 @@ else{
 
 for (let i=0; i<6; i++){
    section.innerHTML += `<article class="myArticles">
-   <a href="./detalle-peliculas.html">
+   <a href="./detalle-peliculas.html?id=${data.results[i].id}">
        <div>
            <h1 class="titulopelis">${data.results[i].title}</h1>
            <img class="imagenes"
