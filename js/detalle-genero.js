@@ -36,12 +36,12 @@ fetch(url)
         .then(function(data) {
             console.log(data);
             let generoApi = data.results
-            let generos = document.querySelector('#bloquePeliculas') 
-            let generosVacio = ''
+            let genero = document.querySelector('#bloqueGenero') 
+            let generoVacio = ''
             
             for (let i = 0; i < 5; i++) {
                 
-            peliculasVacio +=
+              generoVacio +=
                  `<article class="myArticles">
                 <a href="detalle-genero.html?id=${generoApi[i].id}">
                 <div class="bloque-item-lista">
@@ -57,7 +57,7 @@ fetch(url)
             }
             console.log(genero);
             console.log(generoVacio);
-            peliculas.innerHTML = generoVacio
+            genero.innerHTML = generoVacio
         
         })
        
@@ -83,36 +83,4 @@ fetch(url)
 
 
 
-
-fetch(banana)
-  .then(function (res) {
-    return res.json();
-  })
-  .then(function (data) {
-    console.log(data);
-
-    let titulo = document.querySelector('#tituloGenero');
-    let poster = document.querySelector('#poster');
-    let descripcion = document.querySelector('#descripcion');
-    let rating = document.querySelector('#rating');
-    let estreno = document.querySelector('#estreno');
-    let director = document.querySelector('#directoresNombre');
-    let elenco = document.querySelector('#elenco');
-    let genero = document.querySelector('#generoNombre');
-
-
-    poster.src = `https://image.tmdb.org/t/p/w500${data.poster_path}`
-    titulo.innerText = data.original_title;
-    descripcion.innerText = data.overview;
-    rating.innerText += data.vote_average;
-    estreno.innerText += data.release_date;
-    director.innerText += data.episode_run_time;
-    genero.innerText += data.genres;
-
-
-
-  })
-  .catch(function (e) {
-    console.log(e);
-  })
 

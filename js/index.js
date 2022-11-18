@@ -123,7 +123,7 @@ let url = "https://api.themoviedb.org/3/movie/popular?api_key=6b8e258b66583b977b
                 
             peliculasVacio +=
                  `<article class="myArticles">
-                <a href="./detalle-peliculas.html/?id=1">
+                <a href="./detalle-peliculas.html?id=${id}">
                 <div class="bloque-item-lista">
                     <h1 id="tituloPeliculas" class="titulopelis">${pelisApi[i].title}</h1>
                     <img id="imagenPelicula" class="imagenes" src="https://image.tmdb.org/t/p/w500${pelisApi[i].poster_path}" alt="foto1">
