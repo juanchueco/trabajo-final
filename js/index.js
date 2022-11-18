@@ -29,7 +29,7 @@ let url = "https://api.themoviedb.org/3/movie/popular?api_key=6b8e258b66583b977b
         })
 
         .then(function(data) {
-            console.log(data);
+            
             let pelisApi = data.results
             let peliculas = document.querySelector('#bloquePeliculas') 
             let peliculasVacio = ''
@@ -50,8 +50,8 @@ let url = "https://api.themoviedb.org/3/movie/popular?api_key=6b8e258b66583b977b
                 </article>`
                 
             }
-            console.log(peliculas);
-            console.log(peliculasVacio);
+           
+            
             peliculas.innerHTML = peliculasVacio
         
         })
@@ -93,7 +93,7 @@ let url = "https://api.themoviedb.org/3/movie/popular?api_key=6b8e258b66583b977b
                 
             }
             console.log(series);
-            console.log(seriesVacio);
+            
             series.innerHTML = seriesVacio
         
         })
@@ -117,13 +117,14 @@ let url = "https://api.themoviedb.org/3/movie/popular?api_key=6b8e258b66583b977b
             console.log(data);
             let pelisApi = data.results
             let peliculas = document.querySelector('#bloqueFavs') 
+            console.log(peliculas);
             let peliculasVacio = ''
             
             for (let i = 7; i < 12; i++) {
                 
             peliculasVacio +=
                  `<article class="myArticles">
-                <a href="./detalle-peliculas.html?id=${id}">
+                <a href="./detalle-peliculas.html?id=${pelisApi[i].id}">
                 <div class="bloque-item-lista">
                     <h1 id="tituloPeliculas" class="titulopelis">${pelisApi[i].title}</h1>
                     <img id="imagenPelicula" class="imagenes" src="https://image.tmdb.org/t/p/w500${pelisApi[i].poster_path}" alt="foto1">
@@ -154,7 +155,7 @@ let url = "https://api.themoviedb.org/3/movie/popular?api_key=6b8e258b66583b977b
         })
 
         .then(function(data) {
-            console.log(data);
+           
             let seriesApi = data.results
             let series = document.querySelector('#bloqueSeries2') 
             let seriesVacio = ''
@@ -176,8 +177,8 @@ let url = "https://api.themoviedb.org/3/movie/popular?api_key=6b8e258b66583b977b
                 </article>`
                 
             }
-            console.log(series);
-            console.log(seriesVacio);
+           
+            
             series.innerHTML = seriesVacio
         
         })
