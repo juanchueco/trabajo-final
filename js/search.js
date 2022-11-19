@@ -17,7 +17,7 @@ buscador.addEventListener('submit', function(e){
 
   else{
     this.submit()
-    mensaje.innerHTML=""
+    // mensaje.innerHTML=""
   }
 })
 
