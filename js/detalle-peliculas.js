@@ -145,3 +145,18 @@ let url3 = `https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=6b8
       .catch(function(e){
         console.log(e);
       })
+
+
+//Favoritos
+
+let favoritos = []
+
+let boton = document.querySelector("button");
+
+boton.addEventListener("click", function(){
+
+  favoritos.push(id)
+
+  console.log(favoritos);
+
+})

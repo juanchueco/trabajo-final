@@ -147,3 +147,48 @@
          .catch(function(e){
            console.log(e);
          })
+
+
+// Favoritos
+let favoritos = []
+
+//si ya hay datos de favoritos
+let recuperaStorage = localStorage.getItem("seriesFavoritos")
+
+//puede o no tener 
+if(recuperaStorage !== null){
+  favoritos = JSON.parse(recuperaStorage)
+}
+
+
+let boton = document.querySelector(".boton");
+
+//preguntemos si el id esta en el array cambiamos el texto del botón
+if(favoritos.includes(id)){
+  boton.innerText = "Quitar de favoritos"
+}
+
+boton.addEventListener("click", function(){
+
+  // aca checkeo si el id ya esta en la lista y cambiar el texto del boton.
+  if (favoritos.includes(id)){
+      //sacar de favoritos
+      let indiceDelaSerie = favoritos.indexOf(id);
+      favoritos.splice(indiceDelaSerie, 1)
+      boton.innerText = "Agregar a favoritos";
+
+  } else {
+    //Guardar el id de la serie en el array
+    favoritos.push(id)
+    boton.innerText = "Quitar de favoritos";
+    
+  }
+
+
+  // aca guardo datos en localStorage
+  let seriesfavsToString = JSON.stringify(favoritos)
+  localStorage.setItem("seriesFavoritos", seriesfavsToString)
+  
+  console.log(localStorage);
+
+}) 
