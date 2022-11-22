@@ -24,8 +24,7 @@
  let id = queryStringObj.get('id');
   console.log(id);
  
- let url = `https://api.themoviedb.org/3/tv/${id}?api_key=6b8e258b66583b977b648fcc8df4f960&language=en-US
-`
+ let url = `https://api.themoviedb.org/3/tv/${id}?api_key=6b8e258b66583b977b648fcc8df4f960&language=en-US`
  
   fetch(url)
    .then(function(res){
@@ -71,7 +70,7 @@
 
 
 
-   let url32 =`https://api.themoviedb.org/3/tv/popular/${id}?api_key=6b8e258b66583b977b648fcc8df4f960&language=en-US&page=1`
+   let url32 =`https://api.themoviedb.org/3/tv/popular?api_key=6b8e258b66583b977b648fcc8df4f960&language=en-US&page=1`
 
         fetch(url32)
         .then(function(response) {
