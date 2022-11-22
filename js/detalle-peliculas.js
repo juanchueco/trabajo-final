@@ -147,16 +147,38 @@ let url3 = `https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=6b8
       })
 
 
-//Favoritos
+// Favoritos
 
 let favoritos = []
+let recuperaStorage = localStorage.getItem("pelisFavoritos")
 
-let boton = document.querySelector("button");
+if(recuperaStorage !== null){
+  favoritos = JSON.parse(recuperaStorage)
+}
+
+let boton = document.querySelector(".boton");
+
+if(favoritos.includes(id)){
+  boton.innerText = "Quitar de favoritos"
+}
 
 boton.addEventListener("click", function(){
 
-  favoritos.push(id)
 
-  console.log(favoritos);
+  if (favoritos.includes(id)){
+     
+      let indiceDelaPeli = favoritos.indexOf(id);
+      favoritos.splice(indiceDelaPeli, 1)
+      boton.innerText = "Agregar a favoritos";
 
-})
+  } else {
+    favoritos.push(id)
+    boton.innerText = "Quitar de favoritos";
+  }
+
+  let pelisfavsToString = JSON.stringify(favoritos)
+  localStorage.setItem("pelisFavoritos", pelisfavsToString)
+  
+  console.log(localStorage);
+
+}) 

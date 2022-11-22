@@ -19,39 +19,45 @@
     }
   })
 
+
     //recuperar array de favoritos
-    let recuperoStorage = localStorage.getItem("seriesFavoritos")
-    let series = JSON.parse(recuperoStorage);
-    console.log(series)
+    let recuperoStorage = localStorage.getItem("seriesFavoritos");
+    let seriesFavoritos = JSON.parse(recuperoStorage);
 
+    let section = document.querySelector("#listaSeries");
+    let seriesfavs = "";
 
-  //recorrer y preguntar por los datos de cada pelicula y serie 
-    for(let i=0; i<series.length; i++){
-      
-      // recuperar los datos de cada serie fav
-      buscarYMostrarFavoritos()
-    }
+    console.log(seriesFavoritos);
 
-    function buscarYMostrarFavoritos(){
-      //buscar una serie en favorito
-      let url = `https://api.themoviedb.org/3/tv/${id}?api_key=6b8e258b66583b977b648fcc8df4f960&language=en-US`
+    if (seriesFavoritos==null || seriesFavoritos.length==0){
+      section.innerHTML="<p> No hay favoritos </p>"
+    }else{
+      for (let i = 0; i < seriesFavoritos.length; i++) {
+        
+        let url = `https://api.themoviedb.org/3/tv/popular${seriesFavoritos[i]}?api_key=6b8e258b66583b977b648fcc8df4f960&language=en-US&page=1`
+        //seriesFavoritos[i]
+        fetch(url)
+        .then(function (response) {
+          return response.JSON();
+        }).then(function (data) {
+          console.log(data);
+          seriesFavoritos += `<article class="myArticles">
+                                <a href="./detalle-serie.html/?id=1">
+                                  <div class="bloque-item-lista">
+                                    <h1 id="tituloPeliculas" class="titulopelis">${seriesApi[i].original_name
+                                    }</h1>
+                                    <img id="imagenPelicula" class="imagenes" src="https://image.tmdb.org/t/p/w500${seriesApi[i].poster_path}" alt="foto1">
+                                    <p id="textoPelicula" class="texto"> ${seriesApi[i].overview}</p>
+                                    <p class="estreno">${seriesApi[i].first_air_date} </p>
+                                  </div>
+                                </a>
+                              </article>`;
 
-      fetch(url)
-        .then(function(res){
-          return res.json()
-        })
-        .then(function(data){
+          return data;
+        }).catch(function (error) {
+          return error;
+        });
 
-
-        })
-        .catch(function(error){
-            console.log(error);
-        })
-    }
-
-    //pruebo meter el coso adentro del la funcion
-    
-    //Mostrar en la pantalla cada personaje que voy recuperando
-
-
-    //tengo que hacer un fetch con el id del api 
+        
+      }
+    } 

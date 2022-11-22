@@ -35,7 +35,7 @@
       console.log(data);
  
       let poster = document.querySelector('#poster1');
-     let titulo = document.querySelector('#titulo1');
+      let titulo = document.querySelector('#titulo1');
       let descripcion = document.querySelector('#descripcion1');
       let rating = document.querySelector('#rating1');
       let estreno = document.querySelector('#estreno1');
@@ -71,7 +71,7 @@
 
 
 
-   let url32 ="https://api.themoviedb.org/3/tv/popular?api_key=6b8e258b66583b977b648fcc8df4f960&language=en-US&page=1"
+   let url32 =`https://api.themoviedb.org/3/tv/popular/${id}?api_key=6b8e258b66583b977b648fcc8df4f960&language=en-US&page=1`
 
         fetch(url32)
         .then(function(response) {
