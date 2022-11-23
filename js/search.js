@@ -1,16 +1,16 @@
 // Buscador con condiciones
 let buscador= document.querySelector(".buscador")
-let Datos=document.querySelector(".ValorIngresado")
+let rtabuscador=document.querySelector(".rta")
 let mensaje=document.querySelector(".mensaje")
 let titulo=document.querySelector(".titulo")
 buscador.addEventListener('submit', function(e){
   e.preventDefault()
   
-  if (Datos.value == '') {
+  if (rtabuscador.value == '') {
     mensaje.innerHTML = "No escribio nada"
     
   }
-  else if (Datos.value.length < 3){
+  else if (rtabuscador.value.length < 3){
     mensaje.innerHTML=" introduzca como minimo 3 caracteres"
   }
 
