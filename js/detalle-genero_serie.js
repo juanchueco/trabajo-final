@@ -9,7 +9,7 @@ buscador.addEventListener('submit', function (hola) {
         mensaje.innerHTML = "No escribio nada"
 
     }
-    else if (rtabuscador.value.length <= 3) {
+    else if (rtabuscador.value.length < 3) {
         mensaje.innerHTML = " introduzca como minimo 3 caracteres"
     }
 
@@ -43,7 +43,7 @@ fetch(url)
 
             generoSVacio +=
                 `<article class="myArticles">
-                <a href="detalle-genero.html?id=${generoSApi[i].id}">
+                <a href="detalle-serie.html?id=${generoSApi[i].id}">
                 <div class="bloque-item-lista">
                     <h1 id="tituloGenero" class="titulopelis">${generoSApi[i].original_name}</h1>
                     <img id="imagenPelicula" class="imagenes" src="https://image.tmdb.org/t/p/w500${generoSApi[i].poster_path}" alt="foto1">

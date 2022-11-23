@@ -9,7 +9,7 @@
         mensaje.innerHTML = "No escribio nada"
         
       }
-      else if (rtabuscador.value.length <= 3){
+      else if (rtabuscador.value.length < 3){
         mensaje.innerHTML=" introduzca como minimo 3 caracteres"
       }
 
