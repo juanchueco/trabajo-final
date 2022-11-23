@@ -5,7 +5,6 @@ let mensaje=document.querySelector(".mensaje")
 let titulo=document.querySelector(".titulo")
 buscador.addEventListener('submit', function(e){
   e.preventDefault()
-  // no quiero que el evento de submit se envie de la nada
   
   if (rtabuscador.value == '') {
     mensaje.innerHTML = "No escribio nada"
